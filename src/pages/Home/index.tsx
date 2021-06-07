@@ -1,8 +1,10 @@
 import React, { ReactNode } from 'react';
-import logo from './logo.svg';
-import Button from './components/Button';
-import Header from './components/Header';
-import './App.css';
+import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
+import Button from '../../components/Button';
+import Header from '../../components/Header';
+import Image from '../../components/Image';
+import { Container, Text } from './styles';
 
 interface Props {
     app?: string;
@@ -12,7 +14,7 @@ interface State {
     count: number;
 }
 
-export default class App extends React.Component<Props, State> {
+export default class Home extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = { count: 1 };
@@ -26,17 +28,18 @@ export default class App extends React.Component<Props, State> {
     render(): ReactNode {
         const { count } = this.state;
         return (
-            <div className="App">
+            <Container>
                 <Header>
-                    <p>Template Totvs - ECARD-BAT</p>
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>Contador de Clicks</p>
+                    <Text>Template Totvs - ECARD-BAT</Text>
+                    <Image image={logo} />
+                    <Link to="/about">Go About</Link>
+                    <Text>Contador de Clicks</Text>
                     <Button
                         title={count.toString()}
                         onClick={this.headleCount}
                     />
                 </Header>
-            </div>
+            </Container>
         );
     }
 }

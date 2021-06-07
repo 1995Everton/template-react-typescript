@@ -32,6 +32,7 @@
         "no-use-before-define": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
         "react/prefer-stateless-function": "off",
+        "import/prefer-default-export": "off",
         "import/extensions": [
             "error",
             "ignorePackages",
